@@ -2,6 +2,7 @@ class Player
   attr_accessor :frames, :name, :score
 
   def initialize(name, frames_str=nil)
+    @name = name
     @frames = []
     init_frames_from_str(frames_str) if frames_str
     @score = calculate_score

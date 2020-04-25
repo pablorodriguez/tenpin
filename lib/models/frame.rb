@@ -4,7 +4,6 @@ class Frame
   def initialize(str)
     @roll_1 = 0
     @roll_2 = 0
-    @roll_3 = 0
     @roll_str = str
     @roll_str.gsub!("F","0")
 

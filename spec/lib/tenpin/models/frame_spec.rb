@@ -2,11 +2,6 @@ require 'spec_helper'
 
 RSpec.describe Frame do
 
-  context "valid" do
-
-
-  end
-
   context "invalid" do
     it "/|/" do
       frame = Frame.new("/|/")

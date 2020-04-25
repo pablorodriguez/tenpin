@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     tenpin (0.1.0)
+      tty-table
 
 GEM
   remote: https://rubygems.org/
@@ -16,12 +17,17 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
     diff-lcs (1.3)
+    equatable (0.6.1)
     factory_bot (5.1.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     minitest (5.14.0)
+    necromancer (0.6.0)
+    pastel (0.7.3)
+      equatable (~> 0.6)
+      tty-color (~> 0.5)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -42,9 +48,24 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
+    strings (0.1.8)
+      strings-ansi (~> 0.1)
+      unicode-display_width (~> 1.5)
+      unicode_utils (~> 1.4)
+    strings-ansi (0.2.0)
     thread_safe (0.3.6)
+    tty-color (0.5.1)
+    tty-screen (0.7.1)
+    tty-table (0.11.0)
+      equatable (~> 0.6)
+      necromancer (~> 0.5)
+      pastel (~> 0.7.2)
+      strings (~> 0.1.5)
+      tty-screen (~> 0.7)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    unicode-display_width (1.7.0)
+    unicode_utils (1.4.0)
     zeitwerk (2.3.0)
 
 PLATFORMS
