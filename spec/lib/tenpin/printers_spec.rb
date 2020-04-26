@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Frame do
+RSpec.describe BaseReportPrinter do
 
   context "test" do
     it "print" do

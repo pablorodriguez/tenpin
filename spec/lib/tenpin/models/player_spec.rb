@@ -11,6 +11,16 @@ RSpec.describe  do
       end
     end
 
+    context "with 10 7|3 9|0 10 0|8 8|2 F|6 10 10 10|8|1 points" do
+
+      let(:player) { Player.new("Pablo","10 7|3 9|0 10 0|8 8|2 F|6 10 10 10|8|1") }
+
+      it "its score must be 167" do
+        expect(player.score).to eq(167)
+      end
+
+    end
+
     context "with 8|/ 8|/ 3|4 X| X| 8|- X| 8|/|9 points" do
       let(:player) { Player.new("Pablo","8|/ 7|/ 3|4 X| 2|/ X| X| 8|- X| 8|/|9") }
 

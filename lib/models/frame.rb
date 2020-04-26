@@ -4,11 +4,10 @@ class Frame
   def initialize(str)
     @roll_1 = 0
     @roll_2 = 0
-    @roll_str = str
-    @roll_str.gsub!("F","0")
-
+    @roll_str = str.gsub("F","0").gsub("10","X")
     if valid_data(@roll_str)
       @roll_str.split("|").each_with_index do |val, index|
+        val = normalize_to_text(val, index)
         self.send("roll_#{index+1}=", val)
       end
     end
@@ -60,7 +59,18 @@ class Frame
 
   private
 
+  def normalize_to_text(val, index)
+    if (index == 1)
+      pre_val = self.send("roll_1")
+      if ((pre_val.to_i + val.to_i) == 10)
+        val= '/'
+      end
+    end
+    val
+  end
+
   def valid_data(str)
+    return true if str == 'X'
     return false if in_valid_length(str)
     return false if str.count("|") == 0
     return false if str.count("/") > 1
