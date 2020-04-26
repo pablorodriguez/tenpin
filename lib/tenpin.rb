@@ -12,9 +12,11 @@ require("imports/file_import")
 require("imports/frames_data_parser")
 
 class TenPin
+  attr_accessor :printer
 
-  def initialize(path_and_file=File.join(File.dirname(__FILE__),'tenpin_data.txt'))
+  def initialize(path_and_file=File.join(File.dirname(__FILE__),'tenpin_data.txt'), printer=TextGamePrinter.new)
     @file = path_and_file
+    @printer = printer
   end
 
   def show
@@ -34,8 +36,7 @@ class TenPin
   end
 
   def print_scores(game)
-    #puts TextGamePrinter.new(game).format
-    #puts AdvanceGamePrinter.new(game).format
-    puts AdvanceGamePrinter.new(game,:unicode).format
+    printer.data = game
+    puts printer.format
   end
 end

@@ -1,6 +1,6 @@
 class AdvanceGamePrinter < BaseReportPrinter
 
-  def initialize(game,type=:ascii)
+  def initialize(game=nil,type=:ascii)
     super(game)
     @type = type
   end

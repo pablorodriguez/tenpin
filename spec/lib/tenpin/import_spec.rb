@@ -4,11 +4,15 @@ RSpec.describe FileImport do
 
   context "test" do
     it "print" do
-      file = File.join(File.dirname(__FILE__), '../../../lib/tenpin_data.txt')
+      tp = TenPin.new( )
+      tp.show
 
-      #FileImport.new(file).read
+      tp.printer = AdvanceGamePrinter.new
+      tp.show
 
-      TenPin.new.show
+      tp.printer = AdvanceGamePrinter.new(nil,:unicode)
+      tp.show
+
     end
 
   end
