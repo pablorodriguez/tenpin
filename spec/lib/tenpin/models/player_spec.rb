@@ -40,9 +40,59 @@ RSpec.describe  do
 
     end
 
+    context "with X X X X X X X X X X points" do
+
+      let(:player) { Player.new("Pablo","X X X X X X X X X X|X|X") }
+
+      it "its score must be 300" do
+        expect(player.score).to eq(300)
+      end
+
+    end
+
+    context "with 10 10 10 10 10 10 10 10 10 10 points" do
+
+      let(:player) { Player.new("Pablo","10 10 10 10 10 10 10 10 10 10") }
+
+      it "its score must be 270" do
+        expect(player.score).to eq(270)
+      end
+
+    end
+
+    context "with 10 10 10 10 10 10 10 10 10 10|10|10 points" do
+
+      let(:player) { Player.new("Pablo","10 10 10 10 10 10 10 10 10 10|10|10") }
+
+      it "its score must be 300" do
+        expect(player.score).to eq(300)
+      end
+
+    end
+
     context "with 0| 0| 0| 0| 0| 0| 0| 0| 0| 0| points" do
 
       let(:player) { Player.new("Pablo","0| 0| 0| 0| 0| 0| 0| 0| 0| 0|0|") }
+
+      it "its score must be 0" do
+        expect(player.score).to eq(0)
+      end
+
+    end
+
+    context "with 0 0 0 0 0 0 0 0 0 0 points" do
+
+      let(:player) { Player.new("Pablo","0 0 0 0 0 0 0 0 0 0") }
+
+      it "its score must be 0" do
+        expect(player.score).to eq(0)
+      end
+
+    end
+
+    context "with F F F F F F F F F F points" do
+
+      let(:player) { Player.new("Pablo","F F F F F F F F F F") }
 
       it "its score must be 0" do
         expect(player.score).to eq(0)
