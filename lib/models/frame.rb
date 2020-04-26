@@ -28,31 +28,12 @@ class Frame
   end
 
   def points_last_frame
-    acc = roll_str.count("X") * 10 # X|X|X
+    acc = points
 
-    if roll_1 != 'X' && roll_2 == '/' && roll_3 == 'X' # 2|/|X
-      acc += 10 + 10
-    end
-
-    if roll_1 != 'X' && roll_2 == '/' && roll_3 != 'X' && roll_3 != '/' # 2|/|2
-      acc += 10 + roll_3.to_i
-    end
-
-    if roll_1 != 'X' && roll_2 != 'X' && roll_2 != '/' && roll_3 == '/' # 2|2|/
-      acc += 10
-    end
-
-    if roll_1 == 'X' && roll_2 == 'X' && roll_3 != 'X' && roll_3 != '/' #X|X|2
-      acc += roll_3.to_i
-    end
-
-    if roll_1 == 'X' && roll_2 != 'X' && roll_3 != 'X' && roll_2 != '/' && roll_3 != '/' # X|2|2
-      acc += roll_2.to_i + roll_3.to_i
-    end
-
-    if roll_1 != 'X' && roll_2 != 'X' && roll_3 != 'X' && roll_1 != '/' && roll_2 != '/' && roll_3 != '/' # 2|3|4
-      acc += roll_1.to_i +  roll_2.to_i + roll_3.to_i
-    end
+    acc += 10 if roll_1 == 'X' && roll_2 == 'X'
+    acc += roll_2.to_i if roll_1 == 'X' && roll_2.to_i > 0
+    acc += 10 if roll_3 == 'X' || roll_3 == '/'
+    acc += roll_3.to_i if roll_3.to_i > 0
 
     acc
   end
